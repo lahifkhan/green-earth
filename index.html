@@ -20,24 +20,90 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-
     <!-- font style -->
     <style>
       * {
         font-family: "Inter", sans-serif;
       }
-
-
     </style>
   </head>
   <body>
     <!-- header -->
-     <header>
-        <nav>
-            
-        </nav>
-     </header>
+    <header>
+      <nav class="bg-[#15803d] text-white">
+        <div class="w-11/12 mx-auto">
+          <div class="navbar">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16"
+                    />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-black space-y-4 font-bold"
+                >
+                  <li>About</li>
+                  <li>Gallery</li>
+                  <li>Plant a Tree</li>
+                </ul>
+              </div>
+              <a class="text-xl font-bold"> 🌳 Green Earth</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1 space-x-4">
+                <li class="hover:border-b-2 border-white cursor-pointer">
+                  About
+                </li>
+                <li class="hover:border-b-2 border-white cursor-pointer">
+                  Gallery
+                </li>
+                <li class="hover:border-b-2 border-white cursor-pointer">
+                  Plant a Tree
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a class="btn rounded-4xl bg-[#FACC15] text-[#15803d]"
+                >Plant a Tree</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
 
-
+      <div class="banner bg-[#CFF0DC]">
+        <div class="flex flex-col md:flex-row  justify-between items-center">
+          <div class="banner-left">
+            <img src="assets/hero-leaf1.png" alt="" />
+          </div>
+          <div class="banner-center text-center space-y-3 mt-8">
+            <h1 class="font-bold text-4xl text-[#1F2937] ">Plant a Tree, Grow a Future</h1>
+            <p class="text-[#1F2937]">
+              Join our mission to plant 1 million trees and make the Earth
+              greener for future generations.
+            </p>
+           <a class="btn rounded-4xl bg-[#FACC15] text-[#15803d]"
+                >Get Involved</a
+              >
+          </div>
+          <div class="banner-right">
+            <img src="assets/hero-leaf2.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
