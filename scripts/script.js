@@ -38,6 +38,7 @@ const loadAllPlants =()=>{
 
 }
 loadAllPlants();
+
 // display category wise tree
 const displayCategoryTree = (trees) =>{
     const treeCardContainer = document.getElementById("tree-card-container");
@@ -69,7 +70,7 @@ const displayCategoryTree = (trees) =>{
                     </div>
 
         
-        `
+        `;
         treeCardContainer.append(treeCard);
     })
 
@@ -83,7 +84,7 @@ const displayCategories =(categories) =>{
     categories.forEach(cat => {
         const category = document.createElement("div");
         category.innerHTML=`
-            <button id="category-${cat.id}" onclick="loadCategoryTree(${cat.id})" class="cat-btn text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full">${cat.category_name}</button>
+            <button id="category-${cat.id}" onclick="loadCategoryTree(${cat.id})" class="cat-btn text-center md:text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full">${cat.category_name}</button>
         `;
 
         categoriesContainer.append(category);
