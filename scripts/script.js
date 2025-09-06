@@ -1,5 +1,14 @@
 console.log("connected");
 
+const removeActiveClass = () =>{
+    const allCategoryBtn = document.querySelectorAll(".cat-btn");
+
+    for(const cat of allCategoryBtn){
+        cat.classList.remove("bg-[#15803D]","text-white");
+    }
+
+}
+
 const loadCategories = () =>{
     fetch("https://openapi.programming-hero.com/api/categories")
     .then(res => res.json())
@@ -10,7 +19,15 @@ const loadCategories = () =>{
 const loadCategoryTree =(id)=>{
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then(res => res.json())
-    .then(data => displayCategoryTree(data.plants));
+    .then(data => {
+         displayCategoryTree(data.plants);
+         removeActiveClass();
+         const catBtn = document.getElementById(`category-${id}`);
+         catBtn.classList.add("bg-[#15803D]","text-white");
+
+
+    }
+);
 }
  
 // load all plants 
@@ -59,13 +76,14 @@ const displayCategoryTree = (trees) =>{
 }
 
 const displayCategories =(categories) =>{
+    console.log(categories);
     const categoriesContainer = document.getElementById("categories-container");
     categoriesContainer.innerHTML="";
 
     categories.forEach(cat => {
         const category = document.createElement("div");
         category.innerHTML=`
-            <button onclick="loadCategoryTree(${cat.id})" class=" text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full">${cat.category_name}</button>
+            <button id="category-${cat.id}" onclick="loadCategoryTree(${cat.id})" class="cat-btn text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full">${cat.category_name}</button>
         `;
 
         categoriesContainer.append(category);
