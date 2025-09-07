@@ -120,6 +120,36 @@ const handleCartDelete =(id) =>{
     console.log(addToCart);
 }
 
+// load tree details 
+const loadTreeDetails =(id)=>{
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then(res => res.json())
+    .then(data => showTreeDetails(data.plants));
+
+}
+
+const showTreeDetails = (tree) =>{
+    const detailsContainer = document.getElementById("modal-container");
+    detailsContainer.innerHTML="";
+    detailsContainer.innerHTML=`
+       <div class="space-y-2">
+        <h1 class="font-bold text-xl">${tree.name} </h1>
+        <div class="w-full h-48 overflow-hidden">
+            <img class=" object-cover h-full w-full rounded-md" src="${tree.image}" alt="">
+
+        </div>
+
+        <p><span class="font-bold">Category:</span> ${tree.category}</p>
+        <p><span class="font-bold">Price:</span> ${tree.price}</p>
+        <p><span class="font-bold">Description:</span> ${tree.description}</p>
+
+       </div>
+    `;
+
+    document.getElementById("tree-modal").showModal();
+
+}
+
 
 // display category wise tree
 const displayCategoryTree = (trees) =>{
@@ -135,7 +165,7 @@ const displayCategoryTree = (trees) =>{
                         </div>
 
                         <div class="space-y-1">
-                            <h1 class="font-bold">${tree.name}</h1>
+                            <h1 onclick="loadTreeDetails(${tree.id})" class="font-bold">${tree.name}</h1>
                             <p>${tree.description}</p>
                         </div>
 
