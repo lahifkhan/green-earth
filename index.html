@@ -111,7 +111,13 @@
     <!-- main -->
     <main class="w-11/12 mx-auto">
       <h1 class="text-center mt-24 font-bold text-2xl">Choose Your Trees</h1>
+
+      <!-- spinner -->
+       <div class="flex justify-center py-6">
+         <span id="spinner" class="loading loading-dots loading-xl hidden"></span>
+       </div>
       <!-- display catergory and tree card  -->
+
       <div class="grid grid-cols-1 md:grid-cols-5 gap-3 mt-6">
         <div>
           <h1 class="font-bold">Categories</h1>
@@ -137,30 +143,9 @@
             id="tree-card-container"
             class="grid grid-cols-1 md:grid-cols-3 gap-2 "
           >
-            <div class="card flex flex-col gap-2 bg-white p-3 rounded-md">
-              <div class="">
-                <img class="object-contain" src="assets/about.png" alt="" />
-              </div>
+          
+          
 
-              <div class="space-y-1">
-                <h1 class="font-bold">Mango Tree</h1>
-                <p>
-                  A fast-growing tropical tree that produces delicious, juicy
-                  mangoes during summer. Its dense green
-                </p>
-              </div>
-
-              <div class="flex justify-between items-center">
-                <button class="btn bg-[#DCFCE7] rounded-2xl text-[#15803D]">
-                  Fruit Tree
-                </button>
-                <p class="font-bold">৳<span>500</span></p>
-              </div>
-
-              <button class="btn bg-[#15803D] text-white rounded-3xl">
-                Add to Cart
-              </button>
-            </div>
           </div>
         </div>
 
