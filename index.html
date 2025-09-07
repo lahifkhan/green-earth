@@ -118,8 +118,8 @@
 
           <div class="space-y-2">
             <button
-              onclick="loadAllPlants()"
-              class="text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full mt-2"
+              onclick="loadAllPlants(); handleAllTreeActv();"
+            id="all-tree-0"  class=" cat-btn cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full mt-2 text-center lg:text-left"
             >
               All Trees
             </button>
@@ -131,11 +131,11 @@
         </div>
 
         <div class="md:col-span-3">
-          <h1 class="font-bold">display tree card</h1>
+         
 
           <div
             id="tree-card-container"
-            class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2"
+            class="grid grid-cols-1 md:grid-cols-3 gap-2 "
           >
             <div class="card flex flex-col gap-2 bg-white p-3 rounded-md">
               <div class="">
@@ -164,8 +164,17 @@
           </div>
         </div>
 
-        <div id="cart-container">
-          <h1>Your Cart</h1>
+        <div class=" bg-white py-4">
+          <h1 class="font-bold pl-2">Your Cart</h1>
+          <div id="cart-container" class="p-2">
+           
+
+          </div>
+          <div id="total-price-container" class="flex justify-end mt-3 p-2 hidden">
+            <p class="font-bold">total: $<span id="total-price">0</span></p>
+
+          </div>
+
         </div>
       </div>
 

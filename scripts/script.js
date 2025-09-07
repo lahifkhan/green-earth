@@ -32,12 +32,94 @@ const loadCategoryTree =(id)=>{
  
 // load all plants 
 const loadAllPlants =()=>{
+    
     fetch("https://openapi.programming-hero.com/api/plants")
     .then(res => res.json())
     .then(data=> displayCategoryTree(data.plants));
 
 }
 loadAllPlants();
+
+const handleAllTreeActv =()=>{
+    removeActiveClass();
+    document.getElementById("all-tree-0").classList.add("bg-[#15803D]","text-white");
+}
+
+
+// add to cart
+let addToCart = [];
+
+let totalPrice = Number(document.getElementById("total-price").innerText)
+
+const loadAddToCart =(e) =>{
+    // console.log(e.target.parentNode.childNodes[5].childNodes[3].childNodes[1].innerText);
+    const id = e.target.parentNode.id;
+    const name = e.target.parentNode.childNodes[3].childNodes[1].innerText;
+    const price = Number(e.target.parentNode.childNodes[5].childNodes[3].childNodes[1].innerText);
+    totalPrice= totalPrice+price;
+    alert(`${name} has been added to the cart`);
+    addToCart.push(
+        {
+            id:id,
+            name:name,
+            price: price
+        }
+    )
+    showAddToCart(addToCart);
+    
+}
+
+
+// show add to cart
+const showAddToCart =(carts) =>{
+
+
+
+    const cartContainer = document.getElementById("cart-container");
+    cartContainer.innerHTML="";
+    if(carts.length ===0){
+        document.getElementById("total-price-container").classList.add("hidden");
+        return;
+    }
+    carts.forEach(cart =>{
+        const cartBox = document.createElement("div");
+        cartBox.innerHTML=`
+             <div class="cart flex justify-between items-center space-y-2 mt-2 bg-[#F0FDF4] p-2">
+              <div class="">
+                <p class="font-bold">${cart.name}</p>
+                <p class="text-[#1f2937]">৳${cart.price} x 1</p>
+              </div>
+              <div>
+                <button onclick="handleCartDelete(${cart.id})" >❌</button>
+              </div>
+            </div>
+        `
+        cartContainer.append(cartBox);
+    })
+    document.getElementById("total-price-container").classList.remove("hidden");
+    document.getElementById("total-price").innerText=totalPrice;
+}
+
+// handleCartDelete
+
+const handleCartDelete =(id) =>{
+    console.log(id);
+
+    const newFillterCart = addToCart.filter(cart => cart.id !=id);
+    addToCart=newFillterCart;
+
+    let newTotalPrice =0;
+    addToCart.forEach(cart=>{
+        newTotalPrice += Number(cart.price);
+    });
+
+    totalPrice=newTotalPrice;
+
+    showAddToCart(addToCart);
+    console.log(newTotalPrice);
+    console.log(addToCart);
+}
+
 
 // display category wise tree
 const displayCategoryTree = (trees) =>{
@@ -63,7 +145,7 @@ const displayCategoryTree = (trees) =>{
                         </div>
 
                        
-                            <button class="btn bg-[#15803D] text-white rounded-3xl">Add to Cart</button>
+                            <button onclick="loadAddToCart(event)" class="btn bg-[#15803D] text-white rounded-3xl">Add to Cart</button>
 
                         
 
@@ -98,3 +180,4 @@ const displayCategories =(categories) =>{
 
 
 loadCategories();
+
