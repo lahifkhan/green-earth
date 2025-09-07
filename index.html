@@ -85,19 +85,21 @@
       </nav>
 
       <div class="banner bg-[#CFF0DC]">
-        <div class="flex flex-col md:flex-row  justify-between items-center">
+        <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="banner-left">
             <img src="assets/hero-leaf1.png" alt="" />
           </div>
           <div class="banner-center text-center space-y-3 mt-8">
-            <h1 class="font-bold text-4xl text-[#1F2937] ">Plant a Tree, Grow a Future</h1>
+            <h1 class="font-bold text-4xl text-[#1F2937]">
+              Plant a Tree, Grow a Future
+            </h1>
             <p class="text-[#1F2937]">
               Join our mission to plant 1 million trees and make the Earth
               greener for future generations.
             </p>
-           <a class="btn rounded-4xl bg-[#FACC15] text-[#15803d]"
-                >Get Involved</a
-              >
+            <a class="btn rounded-4xl bg-[#FACC15] text-[#15803d]"
+              >Get Involved</a
+            >
           </div>
           <div class="banner-right">
             <img src="assets/hero-leaf2.png" alt="" />
@@ -107,63 +109,98 @@
     </header>
 
     <!-- main -->
-     <main class="w-11/12 mx-auto ">
-        <h1 class="text-center mt-24 font-bold text-2xl">Choose Your Trees</h1>
+    <main class="w-11/12 mx-auto">
+      <h1 class="text-center mt-24 font-bold text-2xl">Choose Your Trees</h1>
+      <!-- display catergory and tree card  -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3 mt-6">
+        <div>
+          <h1 class="font-bold">Categories</h1>
 
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 mt-6">
-            <div >
-                <h1 class="font-bold ">Categories</h1>
-
-               <div class="space-y-2">
-                <button onclick="loadAllPlants()" class=" text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full mt-2">All Trees</button>
-                 <div id="categories-container" class="grid grid-cols-1 space-y-2">
-                    
-                    
-                </div>
-               </div>
-
-            </div>
-
-            <div  class="md:col-span-3">
-                <h1 class="font-bold">display tree card</h1>
-
-                <div id="tree-card-container" class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
-                    <div class ="card flex flex-col gap-2 bg-white p-3 rounded-md">
-                        <div class="">
-                            <img class=" object-contain" src="assets/about.png" alt="">
-
-                        </div>
-
-                        <div class="space-y-1">
-                            <h1 class="font-bold">Mango Tree</h1>
-                            <p>A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                        </div>
-
-                        <div class="flex justify-between items-center">
-                            <button class="btn bg-[#DCFCE7] rounded-2xl text-[#15803D]">Fruit Tree</button>
-                            <p class="font-bold">৳<span>500</span></p>
-                        </div>
-
-                       
-                            <button class="btn bg-[#15803D] text-white rounded-3xl">Add to Cart</button>
-
-                        
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="cart-container">
-                <h1>Your Cart</h1>
-
-
-            </div>
+          <div class="space-y-2">
+            <button
+              onclick="loadAllPlants()"
+              class="text-left cursor-pointer hover:bg-[#15803D] hover:text-white p-1 w-full mt-2"
+            >
+              All Trees
+            </button>
+            <div
+              id="categories-container"
+              class="grid grid-cols-1 space-y-2"
+            ></div>
+          </div>
         </div>
-     </main>
 
-     <!-- script link -->
-      <script src="scripts/script.js"></script>
+        <div class="md:col-span-3">
+          <h1 class="font-bold">display tree card</h1>
+
+          <div
+            id="tree-card-container"
+            class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2"
+          >
+            <div class="card flex flex-col gap-2 bg-white p-3 rounded-md">
+              <div class="">
+                <img class="object-contain" src="assets/about.png" alt="" />
+              </div>
+
+              <div class="space-y-1">
+                <h1 class="font-bold">Mango Tree</h1>
+                <p>
+                  A fast-growing tropical tree that produces delicious, juicy
+                  mangoes during summer. Its dense green
+                </p>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <button class="btn bg-[#DCFCE7] rounded-2xl text-[#15803D]">
+                  Fruit Tree
+                </button>
+                <p class="font-bold">৳<span>500</span></p>
+              </div>
+
+              <button class="btn bg-[#15803D] text-white rounded-3xl">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="cart-container">
+          <h1>Your Cart</h1>
+        </div>
+      </div>
+
+      <!-- about the campagin section -->
+      <div class="max-w-8xl mx-auto py-20">
+        <h1 class="text-center font-bold text-2xl">About the Campaign</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 mt-4">
+          <div
+            class="flex flex-col md:flex-row gap-10 justify-center items-center md:col-start-2 md:col-end-5"
+          >
+            <div class="flex-1 max-w-[530px] max-h-[530px] rounded-md">
+              <img class="object-contain" src="assets/about.png" alt="" />
+            </div>
+            <div class="flex-1 space-y-1">
+              <p>
+                Green Earth is a global tree plantation initiative dedicated to
+                fighting climate change. Since our start, we’ve planted over
+                500,000 trees worldwide. By joining our campaign, you help
+                restore forests, create habitats for wildlife, and combat global
+                warming.
+              </p>
+
+              <ul class="list-disc list-inside pl-3">
+                <li>Restoration of natural habitats</li>
+                <li>Improvement of air quality</li>
+                <li>Support for local communities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- script link -->
+    <script src="scripts/script.js"></script>
   </body>
 </html>
