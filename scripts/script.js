@@ -99,7 +99,7 @@ const showAddToCart =(carts) =>{
     carts.forEach(cart =>{
         const cartBox = document.createElement("div");
         cartBox.innerHTML=`
-             <div class="cart flex justify-between items-center space-y-2 mt-2 bg-[#F0FDF4] p-2">
+             <div class="cart flex justify-between items-center space-y-2 mt-2 bg-[#F0FDF4] p-2 rounded-md">
               <div class="">
                 <p class="font-bold">${cart.name}</p>
                 <p class="text-[#1f2937]">৳${cart.price} x 1</p>
