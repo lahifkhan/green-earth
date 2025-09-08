@@ -1,4 +1,3 @@
-console.log("connected");
 
 const removeActiveClass = () =>{
     const allCategoryBtn = document.querySelectorAll(".cat-btn");
@@ -118,7 +117,6 @@ const showAddToCart =(carts) =>{
 // handleCartDelete
 
 const handleCartDelete =(id) =>{
-    console.log(id);
 
     const newFillterCart = addToCart.filter(cart => cart.id !=id);
     addToCart=newFillterCart;
@@ -206,7 +204,7 @@ const displayCategoryTree = (trees) =>{
 }
 
 const displayCategories =(categories) =>{
-    console.log(categories);
+    
     const categoriesContainer = document.getElementById("categories-container");
     categoriesContainer.innerHTML="";
 
